@@ -1,0 +1,7 @@
+RewriteEngine on
+
+# Это что б реальньно созданные файлы не редиректились
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# редиректим на него родного
+RewriteRule . index.php
