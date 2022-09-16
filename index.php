@@ -5,6 +5,9 @@ $route = explode('?',$_SERVER['REQUEST_URI'])[0];
 $route = trim($route,'/');
 //var_dump($route);
 $controller = explode('/',$route)[0];
+if(!$controller){
+    $controller = 'info';
+}
 $action = explode('/',$route)[1]??'index';
 //$action = explode('/',$route)[1];
 //var_dump($action);
