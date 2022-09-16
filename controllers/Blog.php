@@ -1,16 +1,14 @@
 <?php
 
-namespace catalog;
 
-class Catalog {
+namespace blog;
+
+use catalog;
+
+class Blog
+{
     function index(){
-        $this->render('catalog');
-    }
-    function listCatalog() {
-        echo 'catalog listCatalog';
-    }
-    function product($id) {
-        include './view/product.php';
+        $this->render('blog');
     }
     function render ($template){
         ob_start();
