@@ -3,8 +3,6 @@
 
 namespace blog;
 
-use catalog;
-
 class Blog
 {
     function index(){
