@@ -1,6 +1,6 @@
 <?php
 
-namespace catalog;
+namespace Catalog;
 
 class Catalog {
     function index(){
