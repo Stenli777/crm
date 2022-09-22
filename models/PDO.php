@@ -6,6 +6,7 @@ namespace models;
 
 class PDO
 {
+//    const FETCH_ASSOC = [$key=>$value];
     static $connection;
     function __construct(){
         $user = 'root';

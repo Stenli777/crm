@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../allmine.ru/.idea/allmine.ru.iml" filepath="$PROJECT_DIR$/../allmine.ru/.idea/allmine.ru.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/crm.local.iml" filepath="$PROJECT_DIR$/.idea/crm.local.iml" />
     </modules>
   </component>

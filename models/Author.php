@@ -1,13 +1,12 @@
 <?php
 namespace models;
 
-class Author {
+class Author extends Model {
+    public static $table = 'authors';
+//    public $firstname = '';
+//    public $lastname = '';
+    function fullname()
+{
 
-    static function all(){
-        $table = 'authors';
-        return PDO::$connection->query('SELECT * FROM authors')->fetchAll();
-    }
-    static function byId($id){
-
-    }
+}
 }
