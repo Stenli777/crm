@@ -6,7 +6,10 @@ class Controller {
 
     }
 
-    function render($template) {
+    function render($template,$params=[]) {
+        foreach ($params as $key => $value){
+            $$key=$value;
+        }
         ob_start();
         include "./view/{$template}.php";
         $content = ob_get_clean();

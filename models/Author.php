@@ -5,8 +5,8 @@ class Author extends Model {
     public static $table = 'authors';
 //    public $firstname = '';
 //    public $lastname = '';
-    function fullname()
+    public function fullname()
 {
-
+    return "{$this->firstname} {$this->lastname}";
 }
 }
