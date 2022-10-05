@@ -5,15 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?=$title;?></title>
 </head>
 <body>
     <header>
-        <h1>Header</h1>
+        <p>Здесь хэдер</p>
     </header>
     <div class="container"><?=$content;?></div>
     <footer>
-        <h2>Footer</h2>
+        <p>Здесь футер</p>
     </footer>
 </body>
 </html>

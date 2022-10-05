@@ -40,9 +40,11 @@ try {
 } catch (GetNotFoundError $e) {
     http_response_code(501);
     echo $e->getMessage();
+    echo $e->getFile() . " " . $e->getLine();
 } catch (Throwable $e) {
     http_response_code(500);
     echo $e->getMessage();
+    echo $e->getFile() . " " . $e->getLine();
 }
 //finally {
 //    echo 'finally';

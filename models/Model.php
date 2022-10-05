@@ -33,8 +33,22 @@ class Model
         return $model;
     }
     public function save(){
-        PDO::$connection->query('
-        INSERT INTO ' . $this->table . '(' . implode(',',array_keys(get_object_vars($this))) . ') 
-        VALUES (' . implode(',',array_map(function ($data){return "'${$data}'"},array_values(get_object_vars($this)))) . ')' )->fetch(\PDO::FETCH_ASSOC);
-    }
+//        var_dump(PDO::$connection);
+//        var_dump('
+//        INSERT INTO ' . static::$table . '(' . implode(',', array_keys(get_object_vars($this))) . ')
+//        VALUES (' . implode(',', array_map(function ($data) {
+//                return "'{$data}'";
+//            }, array_values(get_object_vars($this)))) . ')');
+        try {
+            PDO::$connection->exec('
+        INSERT INTO ' . static::$table . '(' . implode(',', array_keys(get_object_vars($this))) . ') 
+        VALUES (' . implode(',', array_map(function ($data) {
+                    return "'{$data}'";
+                }, array_values(get_object_vars($this)))) . ')');
+        }
+        catch(\Throwable $e) {
+            var_dump(PDO::$connection->errorInfo());
+            var_dump($e);
+        }
+        }
 }
