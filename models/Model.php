@@ -45,6 +45,7 @@ class Model
         VALUES (' . implode(',', array_map(function ($data) {
                     return "'{$data}'";
                 }, array_values(get_object_vars($this)))) . ')');
+            $this->id = PDO::$connection->lastInsertId(static::$table);
         }
         catch(\Throwable $e) {
             var_dump(PDO::$connection->errorInfo());

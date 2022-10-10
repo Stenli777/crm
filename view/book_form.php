@@ -3,7 +3,7 @@
     <p>Введите название книги</p>
     <input type="text" name="name">
     <p>Выберите автора</p>
-    <select name="authors">
+    <select name="authors[]" multiple>
         <?php foreach ($authors as $author):?>
         <option value="<?=$author->id?>"><?=$author->fullname()?></option>
         <?php endforeach;?>

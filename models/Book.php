@@ -26,4 +26,15 @@ WHERE book_author.book_id = ' . $this->id)->fetchAll(\PDO::FETCH_ASSOC);
         },$authors);
         return $authors;
     }
+    function save(){
+        $authors = $this->authors;
+        unset($this->authors);
+        parent::save();
+        foreach ($authors as $author) {
+            PDO::$connection->exec('
+        INSERT INTO ' . ' book_author ' . '(book_id, author_id) 
+        VALUES (' . $this->id . ',' . $author . ')');
+        }
+
+    }
 }

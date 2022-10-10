@@ -23,6 +23,9 @@ class Catalog extends Controller {
     function author($id) {
         $author = \models\Author::byId($id);
         echo "{$author->firstname} {$author->lastname}";
+        echo"<br>";
+        $books = $author->getBooks();
+        print_r($books);
     }
     function newbook() {
         $data = $_POST;
@@ -36,6 +39,7 @@ class Catalog extends Controller {
 //            var_dump($model);
         }
         $model->save();
+        var_dump($model);
     }
     function book_form(){
         $this->render('book_form',['authors'=>\models\Author::all()]);
@@ -53,9 +57,15 @@ class Catalog extends Controller {
 //            var_dump($model);
         }
         $model->save();
+
+        $this->redirect("/catalog/authors");
     }
     function author_form(){
         $this->render('author_form');
 
+    }
+    public function authors(){
+        $authors = \models\Author::all();
+        $this->render('catalog-authors',['authors' => $authors]);
     }
 }

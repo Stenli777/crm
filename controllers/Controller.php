@@ -16,4 +16,8 @@ class Controller {
         $title = 'Каталог';
         include './view/layout/default.php';
     }
+
+    public function redirect($url){
+        header("Location: $url");
+    }
 }
