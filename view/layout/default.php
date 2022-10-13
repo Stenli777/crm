@@ -12,6 +12,9 @@
 <body>
     <header>
         <p>Здесь хэдер</p>
+        <p><a href="/catalog/">Каталог</a></p>
+        <p><a href="/catalog/book_form">Добавление книги</a></p>
+        <p><a href="/catalog/author_form">Добавление автора</a></p>
     </header>
     <div class="container"><?=$content;?></div>
     <footer>
